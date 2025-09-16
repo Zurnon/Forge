@@ -6,7 +6,7 @@ Forge is a programming language for creating other programming languages. The ma
 
 The language will start simple, with a basic syntax like:
 
-<keyword> <variable name> = <value>
+keyword variableName = value
 
 
 Over time, I hope to expand it into a powerful and flexible tool for creating entirely new languages.
