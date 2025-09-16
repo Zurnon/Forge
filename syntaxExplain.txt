@@ -14,8 +14,10 @@ General format:
 <what you want to edit> : <the value it will have> ;
 
 Example:
-varKeyword : "myVar" ;
+varKeyword = "myVar" ;
 This defines 'myVar' as the keyword for declaring variables in your language.
+
+and for settings in your language you use : and for setting values like keywords you use =
 
 also Forge uses # for one line comments and / for multi line for when your designing your language
 
@@ -27,8 +29,8 @@ Once keywords are defined, you can declare variables using:
 myVar x = 5;
 
 You can also define custom operators and statement terminators:
-assignment : "~" ;
-endStatement : "{}" ;
+assignment = "~" ;
+endStatement = "{}" ;
 
 Then the variable declaration would look like:
 myVar x ~ 5{}
@@ -55,40 +57,40 @@ y = 10
 
 ex/
     # Keywords:
-    - varKeyword  : Variable declaration keyword
-    - funcKeyword : Function declaration keyword
+    - varKeyword  = Variable declaration keyword
+    - funcKeyword = Function declaration keyword
 
     # Operators / Symbols:
-    - assignment   : Assignment operator ('=' by default)
-    - endStatement : Statement terminator (';' by default)
-    - blockStart   : Start of a code block ('{' by default)
-    - blockEnd     : End of a code block ('}' by default)
+    - assignment   = Assignment operator ('=' by default)
+    - endStatement = Statement terminator (';' by default)
+    - blockStart   = Start of a code block ('{' by default)
+    - blockEnd     = End of a code block ('}' by default)
 
     # Optional / Advanced Settings:
     - endStatementType : How statements are terminated ('symbol' or 'newLine')=
-    - stringDelimiter  : Symbol to delimit strings (default '"')
-    - lineComment      : Symbol for single-line comments (default '//')
-    - blockComment     : Symbol for multi-line comments (default '/* */')
+    - stringDelimiter  = Symbol to delimit strings (default '"')
+    - lineComment      = Symbol for single-line comments (default '//')
+    - blockComment     = Symbol for multi-line comments (default '/* */')
 
 ---
 
 ## 5. Example Full Syntax File
 
 # Keywords
-varKeyword : "myVar" ;
-funcKeyword : "myFunc" ;
+varKeyword = "myVar" ;
+funcKeyword = "myFunc" ;
 
 # Operators
-assignment : "~" ;
-endStatement : "{}" ;
-blockStart : "[" ;
-blockEnd : "]" ;
+assignment = "~" ;
+endStatement = "{}" ;
+blockStart = "[" ;
+blockEnd = "]" ;
 
 # Settings
 endStatementType : "symbol" ;
-stringDelimiter : '"' ;
-lineComment : "//" ;
-blockComment : "/* */" ;
+stringDelimiter = '"' ;
+lineComment = "//" ;
+blockComment = "/* */" ;
 
 ---
 
@@ -104,3 +106,7 @@ myFunc addNumbers[a, b] [
 - Variables use '~' for assignment.
 - Statements end with '{}'.
 - Functions are declared with 'myFunc' and blocks use '[' and ']'.
+
+
+
+ALSO CHANCES ARE THIS IS NOT PROPER SYNTAX ITS JUST A EXPLAINATION TO HOW "Forge" IS GONNA WORK
