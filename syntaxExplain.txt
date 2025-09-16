@@ -1,0 +1,106 @@
+# Forge Syntax Overview
+
+Forge is a meta-language for creating programming languages. Its syntax is built around keywords and values, and it allows you to fully
+customize how your language looks and behaves. All syntax elements are defined in a syntax configuration file that Forge reads to generate
+an interpreter (and potentially a compiler in the future).
+
+---
+
+## 1. Syntax Definition Blocks
+
+im gonna use < > to describe what goes in each part of the syntax.
+
+General format:
+<what you want to edit> : <the value it will have> ;
+
+Example:
+varKeyword : "myVar" ;
+This defines 'myVar' as the keyword for declaring variables in your language.
+
+also Forge uses # for one line comments and / for multi line for when your designing your language
+
+---
+
+## 2. Variable Declaration
+
+Once keywords are defined, you can declare variables using:
+myVar x = 5;
+
+You can also define custom operators and statement terminators:
+assignment : "~" ;
+endStatement : "{}" ;
+
+Then the variable declaration would look like:
+myVar x ~ 5{}
+- '~' replaces '='
+- '{}' replaces ';'
+
+---
+
+## 3. Configurable Language Settings
+
+Forge supports toggleable settings to customize language behavior.
+
+Example: Changing the end-of-statement type
+endStatementType : "newLine" ;
+- Statements can now end with a new line instead of a symbol.
+- Example code with this setting:
+x = 5
+y = 10
+- No semicolons or custom symbols are needed; statements are separated by lines.
+
+---
+
+## 4. Keywords and Operators
+
+ex/
+    # Keywords:
+    - varKeyword  : Variable declaration keyword
+    - funcKeyword : Function declaration keyword
+
+    # Operators / Symbols:
+    - assignment   : Assignment operator ('=' by default)
+    - endStatement : Statement terminator (';' by default)
+    - blockStart   : Start of a code block ('{' by default)
+    - blockEnd     : End of a code block ('}' by default)
+
+    # Optional / Advanced Settings:
+    - endStatementType : How statements are terminated ('symbol' or 'newLine')=
+    - stringDelimiter  : Symbol to delimit strings (default '"')
+    - lineComment      : Symbol for single-line comments (default '//')
+    - blockComment     : Symbol for multi-line comments (default '/* */')
+
+---
+
+## 5. Example Full Syntax File
+
+# Keywords
+varKeyword : "myVar" ;
+funcKeyword : "myFunc" ;
+
+# Operators
+assignment : "~" ;
+endStatement : "{}" ;
+blockStart : "[" ;
+blockEnd : "]" ;
+
+# Settings
+endStatementType : "symbol" ;
+stringDelimiter : '"' ;
+lineComment : "//" ;
+blockComment : "/* */" ;
+
+---
+
+## 6. Example Code Using Custom Syntax
+
+myVar x ~ 5{}
+myVar y ~ 10{}
+
+myFunc addNumbers[a, b] [
+    return a + b{}
+]
+
+- Variables use '~' for assignment.
+- Statements end with '{}'.
+- Functions are declared with 'myFunc' and blocks use '[' and ']'.

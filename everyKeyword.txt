@@ -1,0 +1,237 @@
+# ===============================
+# Forge Mega Configuration File
+# ===============================
+
+# --------------------------------
+# Core Keywords (Syntax Definitions)
+# --------------------------------
+varKeyword           = "var"         # Variable declaration
+constKeyword         = "const"       # Constant declaration
+funcKeyword          = "func"        # Function declaration
+returnKeyword        = "return"      # Return statement
+ifKeyword            = "if"          # Conditional
+elseKeyword          = "else"        # Else branch
+elifKeyword          = "elif"        # Else-if branch
+whileKeyword         = "while"       # While loop
+forKeyword           = "for"         # For loop
+breakKeyword         = "break"       # Break out of loop
+continueKeyword      = "continue"    # Continue next iteration
+importKeyword        = "import"      # Import modules/files
+classKeyword         = "class"       # Class definition
+structKeyword        = "struct"      # Struct definition
+enumKeyword          = "enum"        # Enum definition
+switchKeyword        = "switch"      # Switch statement
+caseKeyword          = "case"        # Case in switch
+defaultKeyword       = "default"     # Default case in switch
+tryKeyword           = "try"         # Try block
+catchKeyword         = "catch"       # Catch block
+throwKeyword         = "throw"       # Throw exception
+
+# --------------------------------
+# Assignment & Operators (Syntax Definitions)
+# --------------------------------
+assignment           = "="
+addAssignment        = "+="
+subtractAssignment   = "-="
+multiplyAssignment   = "*="
+divideAssignment     = "/="
+modAssignment        = "%="
+powerAssignment      = "**="
+
+addOperator          = "+"
+subtractOperator     = "-"
+multiplyOperator     = "*"
+divideOperator       = "/"
+modOperator          = "%"
+powerOperator        = "**"
+
+equalOperator        = "=="
+notEqualOperator     = "!="
+greaterOperator      = ">"
+lessOperator         = "<"
+greaterEqOperator    = ">="
+lessEqOperator       = "<="
+
+andOperator          = "&&"
+orOperator           = "||"
+notOperator          = "!"
+
+ternaryOperator      = "?"
+ternarySeparator     = ":"
+
+# --------------------------------
+# Statement & Block Delimiters (Syntax Definitions)
+# --------------------------------
+endStatement         = ";"
+blockStart           = "{"
+blockEnd             = "}"
+inlineBlockStart     = "("
+inlineBlockEnd       = ")"
+arrayStart           = "["
+arrayEnd             = "]"
+
+# --------------------------------
+# Data Types & Literals (Syntax Definitions)
+# --------------------------------
+intType              = "int"
+floatType            = "float"
+stringType           = "string"
+boolType             = "bool"
+charType             = "char"
+nullKeyword          = "null"
+
+stringDelimiter      = '"'
+charDelimiter        = "'"
+trueLiteral          = "true"
+falseLiteral         = "false"
+
+# --------------------------------
+# Comments (Syntax Definitions)
+# --------------------------------
+lineComment          = "//"
+blockCommentStart    = "/*"
+blockCommentEnd      = "*/"
+docCommentStart      = "/**"
+docCommentEnd        = "*/"
+
+# --------------------------------
+# Functions (Syntax Definitions)
+# --------------------------------
+functionParamsStart  = "("
+functionParamsEnd    = ")"
+functionReturnType   = "->"
+functionCallStart    = "("
+functionCallEnd      = ")"
+
+# --------------------------------
+# Control Flow (Syntax Definitions)
+# --------------------------------
+ifConditionStart     = "("
+ifConditionEnd       = ")"
+whileConditionStart  = "("
+whileConditionEnd    = ")"
+forConditionStart    = "("
+forConditionEnd      = ")"
+switchConditionStart = "("
+switchConditionEnd   = ")"
+
+# --------------------------------
+# Loops (Syntax Definitions)
+# --------------------------------
+loopIncrement        = "++"
+loopDecrement        = "--"
+
+# --------------------------------
+# Imports & Modules (Syntax Definitions)
+# --------------------------------
+importStart          = "("
+importEnd            = ")"
+importSeparator      = ","
+importAll            = "*"
+
+# --------------------------------
+# Classes & Objects (Syntax Definitions)
+# --------------------------------
+classStart           = "{"
+classEnd             = "}"
+objectAccess         = "."
+staticAccess         = "::"
+inheritanceOperator  = ":"
+
+# --------------------------------
+# Error Handling (Syntax Definitions)
+# --------------------------------
+tryStart             = "{"
+tryEnd               = "}"
+catchStart           = "{"
+catchEnd             = "}"
+throwKeyword         = "throw"
+
+# ===============================
+# Style Toggles (Behavior / How Code is Read)
+# ===============================
+
+# --------------------------------
+# General Style Toggles
+# --------------------------------
+useBracesForBlocks        : true        # true = all blocks use blockStart/blockEnd, false = indentation-based
+spaceAroundOperators      : true        # true = x + y, false = x+y
+statementStyle            : "symbol"    # "symbol" or "newLine"
+
+# --------------------------------
+# Variable Declaration Styles
+# --------------------------------
+varDeclarationStyle       : "classic"   # "classic" = var x = 5, "colon" = var x : 5
+constDeclarationStyle     : "classic"   # same as above
+
+# --------------------------------
+# Function Declaration Styles
+# --------------------------------
+functionDeclarationStyle  : "classic"   # "classic" = func myFunc(params) {}, "indent" = func myFunc params:
+functionParamsStyle       : "parentheses" # "parentheses" = (a, b), "brackets" = [a, b], "space" = a b
+allowOptionalParentheses   : false       # true = conditions/functions can skip parentheses if style allows
+
+# --------------------------------
+# If / Else Styles
+# --------------------------------
+ifStyle                   : "classic"   # "classic" = if (...) {}, "pythonic" = if condition:
+elseStyle                 : "classic"   # "classic" = else {}, "pythonic" = else:
+allowSingleLineIf          : true        # true = if x { y }, false = always block
+forceBracesOnIf            : true        # override style, always use braces
+
+# --------------------------------
+# Loops Styles
+# --------------------------------
+forStyle                  : "c"         # "c" = for(i=0;i<n;i++), "pythonic" = for i in list, "range" = for i in range(start, end)
+whileStyle                : "classic"   # "classic" = while(condition) {}, "pythonic" = while condition:
+allowSingleLineLoop        : true
+forceBracesOnLoops         : true
+
+forIndexStyle             : "variable"  # "variable" = var i = 0, "iterator" = i in list
+forIncrementStyle         : "operator"  # "operator" = i++, "manual" = i = i + 1
+
+# --------------------------------
+# Switch / Case Styles
+# --------------------------------
+switchStyle               : "c"         # "c" = switch(expression) { case x: ... }, "pythonic" = match expression:
+forceBracesOnSwitch       : true
+
+# --------------------------------
+# Expression / Statement Styles
+# --------------------------------
+assignmentStyle           : "symbol"    # "symbol" = x = 5, "colon" = x : 5
+operatorSpacing           : "auto"      # "auto" = follow spaceAroundOperators, "compact" = no spaces
+ternaryStyle              : "classic"   # "classic" = condition ? true : false, "pythonic" = true if condition else false
+forceSemicolons            : false       # override endStatementType
+
+# --------------------------------
+# Block / Indentation Styles
+# --------------------------------
+blockOpeningPosition      : "sameLine"  # "sameLine" = if (...) {, "nextLine" = if (...) \n {
+blockClosingPosition      : "sameColumn" # "sameColumn" = }, "dedent" = aligns with block start
+useIndentation            : true        # true = indentation-sensitive blocks, false = ignore
+
+# --------------------------------
+# Comments & Documentation Styles
+# --------------------------------
+lineCommentSpacing         : true        # true = "// comment", false = "//comment"
+docCommentStyle            : "block"     # "block" = /** doc */, "inline" = /// doc
+
+# --------------------------------
+# Advanced / Optional Features (Syntax Definitions)
+# --------------------------------
+lambdaKeyword        = "lambda"
+arrowFunction        = "->"
+typeCastStart        = "("
+typeCastEnd          = ")"
+pointerOperator      = "*"
+referenceOperator    = "&"
+namespaceKeyword     = "namespace"
+usingKeyword         = "using"
+sizeofKeyword        = "sizeof"
+typeofKeyword        = "typeof"
+importAll            = "*"
+
+# --------------------------------
+# End of Forge Mega Configuration
+# --------------------------------
